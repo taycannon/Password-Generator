@@ -36,7 +36,8 @@ if(passwordLength < 8 || passwordLength > 128){
 
 // alerts users to try again and did not finish condition
 alert(['Please provide the requested length between 8 and 128 please.']);
-return;
+//Added '' to reture because of empty string
+return '';
 }
 else {
 //Lowercase Code
@@ -69,7 +70,7 @@ console.log('user choice array --> ', userChoice);
 
 if(userChoice.length === 0){
   alert("Please choose one character type")
-  return;
+  return '';
 }
 
 //This is the loop
@@ -78,6 +79,7 @@ for (let i = 0; i < passwordLength; i++) {
 finalPassword.push(userChoice[Math.floor(Math.random() * userChoice.length)])
 console.log('finalPassword --> ', finalPassword);
 }
-return finalPassword;
+//Removes commas from answer and is "one word" and makes it a string
+return finalPassword.join('');
 }
 }
