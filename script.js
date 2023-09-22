@@ -1,5 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var lowerCase = "abcdefghijklmnopqrstuvwxyz"
+
 
 // Write password to the #password input
 function writePassword() {
@@ -14,10 +16,16 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword(){
-  let passwordLength = prompt('how long do you want your password?');
+  let passwordLength = prompt('Please provide a minimun length of 8 and a maxium length of 128 for your perferred password!');
   console.log('password length --> ', passwordLength);
   if(passwordLength < 8 || passwordLength > 128){
     alert(['please provide the requested length'])
+  }
+  else {
+    var includeLowercase = confirm("Would you like to include Lowercase letters")
+    if(includeLowercase){
+      console.log('lower case were chosen',Lowercase);
+    }
   }
 }
 
