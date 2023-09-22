@@ -3,16 +3,16 @@ var generateBtn = document.querySelector("#generate");
 //Created userChoice, lowercase, uppercase, numeric, special characters
 var userChoice = [];
 let finalPassword = [];
-var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-var upperCase ="ABCDEFGHIGKLMNOPQRSTUVWXYZ"
-var numeric = "123456789"
-var specialChars = "!#@_?"
 
-// Write password to the #password input
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var upperCase ="ABCDEFGHIGKLMNOPQRSTUVWXYZ";
+var numeric = "123456789";
+var specialChars = "!#@_?";
+
+// Writing th password to the #password input
 function writePassword() {
 var password = generatePassword();
 var passwordText = document.querySelector("#password");
-
 
 passwordText.value = password;
 
@@ -23,13 +23,16 @@ passwordText.value = password;
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+userChoice = []
+finalPassword = []
+
 
 function generatePassword(){
 let passwordLength = prompt('please provide a minimum length of 8 and a maximum length of 128 for your preferred password');
 console.log('password length --> ', passwordLength);
 if(passwordLength < 8 || passwordLength > 128){
 // alerts users to try again and did not finish condition
-alert(['please provide the requested length'])
+alert(['Please provide the requested length'])
 }
 else {
 //Lowercase Code
@@ -66,5 +69,6 @@ for (let i = 0; i < passwordLength; i++) {
 finalPassword.push(userChoice[Math.floor(Math.random() * userChoice.length)])
 console.log('finalPassword --> ', finalPassword);
 }
+return finalPassword;
 }
 }
