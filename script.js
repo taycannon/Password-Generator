@@ -1,11 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-//Created userChoice, lowercase, and uppercase
+//Created userChoice, lowercase, uppercase, numeric, special characters
 var userChoice = [];
 let finalPassword = [];
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var upperCase ="ABCDEFGHIGKLMNOPQRSTUVWXYZ"
-
+var numeric = "123456789"
+var specialChars = "!#@_?"
 
 // Write password to the #password input
 function writePassword() {
@@ -32,21 +33,29 @@ alert(['please provide the requested length'])
 }
 else {
 //Lowercase Code
-var includelowerCase = confirm("Would you want to include Lowercase letters");
+var includelowerCase = confirm("Would you want to include Lowercase letters?");
 if(includelowerCase){
 //push means to add new items at the end of a array
 userChoice.push(...lowerCase)
 }
 
 //Uppercase Code
-var includeupperCase = confirm("Would you like Uppercase");
+var includeupperCase = confirm("Would you like Uppercase letters?");
 if(includeupperCase) {
 userChoice.push(...upperCase)
 }
 
 //Numeric Code
-var includeNumeric
+var includenumeric = confirm("Would you like to add numbers?");
+if(includenumeric){
+  userChoice.push(...numeric)
+}
 
+//Special Characters Code
+var includespecialChars = confirm("Would you like to add Special Characters?")
+if(includespecialChars) {
+  userChoice.push(...specialChars)
+}
 
 
 console.log('user choice array --> ', userChoice);
@@ -59,13 +68,3 @@ console.log('finalPassword --> ', finalPassword);
 }
 }
 }
-
-
-
-
-// var includeUppercase = confirm("include Uppercase letters")
-// var includeLowercase = confirm("include Lowercase letters")
-// var includeNumeric = confirm("include Numbers")
-// var includeSpecialChars = confirm("include Special characters")
-
-// console.log(includeUppercase, includeLowercase, includeNumbers, includeSpecialChars)
