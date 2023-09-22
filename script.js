@@ -14,12 +14,18 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword(){
-  return "password";
+  let passwordLength = prompt('how long do you want your password?');
+  console.log('password length --> ', passwordLength);
+  if(passwordLength < 8 || passwordLength > 128){
+    alert(['please provide the requested length'])
+  }
 }
 
-var includeUppercase = confirm("include Uppercase letters")
-var includeLowercase = confirm("include Lowercase letters")
-var includeNumeric = confirm("include Numbers")
-var includeSpecialChars = confirm("include Special characters")
 
-console.log(includeUppercase, includeLowercase, includeNumbers, includeSpecialChars)
+
+// var includeUppercase = confirm("include Uppercase letters")
+// var includeLowercase = confirm("include Lowercase letters")
+// var includeNumeric = confirm("include Numbers")
+// var includeSpecialChars = confirm("include Special characters")
+
+// console.log(includeUppercase, includeLowercase, includeNumbers, includeSpecialChars)
